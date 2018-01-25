@@ -23,7 +23,7 @@ class LoginScreen extends Component{
                     />
                     <TextInput
                         style={[styles.inputStyle,styles.marginTop10]}
-                        placeholder="请输入密码"
+                        placeholder="请输入密码1"
                         secureTextEntry={true}
                         underlineColorAndroid={'transparent'}
                     />
