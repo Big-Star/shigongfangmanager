@@ -1,19 +1,41 @@
+'use strict';
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation';
+import {
+    Text,
+    View,
+}
+    from 'react-native';
+import StyleSheet from 'StyleSheet';
 
-class Title extends Component{
-    static navigationOptions = {
-        title: 'Welcome',//设置标题内容
-    };
+
+export default class HeaderNoBack extends Component {
     render() {
-        const { navigate } = this.props.navigation;
         return (
-            <View>
-                <Text>Hello, Navigation!</Text>
-                <Button
-                    onPress={() => navigate('Chat',{user:'Lucy'})}
-                    title="Chat with Lucy"/>
+            <View style={styles.container}>
+                <View style={styles.textview}>
+                    <Text style={styles.textstyle}>{this.props.text || "标题头"}</Text>
+                </View>
             </View>
         );
     }
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 45,
+        alignSelf: 'stretch',
+        backgroundColor: '#4a9df8',
+    },
+    textview: {
+        flex: 1,
+        alignSelf: 'center',
+    },
+    textstyle: {
+        fontSize: 18,
+        color: '#fff',
+        textAlign: 'center',
+    },
+});
